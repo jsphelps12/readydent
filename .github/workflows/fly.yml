@@ -12,14 +12,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: superfly/flyctl-actions/setup-flyctl@master
-      - run: |
-          if [[ ${{ github.ref_name }} == "main" ]]; then
-            fly deploy --config fly.toml --app readydent
-          elif [[ ${{ github.ref_name }} == "dev" ]]; then
-            fly deploy --config fly-staging.toml --app app-staging
-          fi
-        
-        #flyctl deploy --remote-only
+      - run: flyctl deploy --remote-only
+      # |
+      #     if [[ ${{ github.ref_name }} == "main" ]]; then
+      #       fly deploy --config fly.toml --app readydent
+      #     elif [[ ${{ github.ref_name }} == "dev" ]]; then
+      #       fly deploy --config fly-staging.toml --app app-staging
+      #     fi
 
         env:
           FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
