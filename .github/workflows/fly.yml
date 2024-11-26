@@ -14,7 +14,7 @@ jobs:
       - uses: superfly/flyctl-actions/setup-flyctl@master
       - run: |
           if [[ ${{ github.ref_name }} == "main" ]]; then
-            fly deploy --config fly.toml --app readydent-lgozrw
+            fly deploy --config fly.toml --app readydent
           elif [[ ${{ github.ref_name }} == "dev" ]]; then
             fly deploy --config fly-staging.toml --app app-staging
           fi
