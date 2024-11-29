@@ -21,7 +21,7 @@ export default function Home() {
             .
           </li>
           <li>Save and see your changes instantly.</li>
-          <li>Push to dev branch to redeploy? (pls work)</li>
+          <li>This is the dev branch</li>
         </ol>
 
         <div className="flex gap-4 items-center flex-col sm:flex-row">
